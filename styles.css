@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #5cb0e4bc;
+}
+
+.wrapper{
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+tbody{
+    [contenteditable="true"]:focus {
+        background-color: #edf3f6a1;
+    }
+}
+
+/* Sudoku Board Styling */
+#sudoku-board {
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+#sudoku-board td {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 16px;
+    border: 2px solid #68a0c3a1;;
+}
+
+#sudoku-board td:first-child {
+    border-left: 3px solid #000000;
+}
+
+#sudoku-board td:nth-child(3n) {
+    border-right: 3px solid #000000;
+}
+
+#sudoku-board tr:first-child td {
+    border-top: 3px solid #000000;
+}
+
+#sudoku-board tr:nth-child(3n) td {
+    border-bottom: 3px solid #000000;
+}
+
+h1{
+    padding: 2%;
+    color: #f04c4c;
+    text-decoration:solid;
+}
+
+#solve-btn{
+    margin-bottom: 3%;
+}
+
+.btn-red{
+    background-color: #e84949;
+    width: fit-content;
+    padding: 0.8rem 2.3rem;
+    color: white;
+    font-size: 18px;
+    box-shadow: 5px 5px 7px 0px #0000003f;
+    cursor: pointer;
+    transition: all 0.5s;
+    font-weight: 500;
+    border: solid 3px transparent;
+    position: relative;
+    z-index: 1;
+    border-radius: 3px;
+}
+
+.btn-red::before{
+    content:"";
+    position: absolute;
+    background-color: #fff;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.8s;
+    z-index: -1;
+}
+
+.btn-red:hover::before{
+    transform: scaleX(1);
+}
+
+.btn-red:hover{
+    border: solid 3px #e84949;
+    color:black;
+}
+
+@media (min-width: 750px) and (max-width: 1184px){
+    #sudoku-board td {
+        width: 80px; 
+        height: 80px;
+        text-align: center;
+        font-size: 16px;
+        border: 2px solid #ddd;
+    }
+}
+
+@media (min-width: 450px) and (max-width: 750px){
+    #sudoku-board td {
+        width: 60px; 
+        height: 60px;
+        text-align: center;
+        font-size: 16px;
+        border: 2px solid #ddd;
+    }
+}
+
+@media (min-width: 150px) and (max-width: 450px) {
+    #sudoku-board td {
+        width: 25px; /* Adjust cell width for smaller screens */
+        height: 25px;
+        text-align: center;
+        font-size: 16px;
+        border: 2px solid #ddd;
+    }
+}
